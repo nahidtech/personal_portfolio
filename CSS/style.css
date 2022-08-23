@@ -25,13 +25,14 @@ a{
 
 .btn {
     padding: 10px 20px;
+    cursor: pointer;
 }
 .container {
     width: 80%;
     margin: 0 auto;
 }
 /* utility style end */
-nav .navbar {
+/* nav .navbar {
     display: flex;
     justify-content: space-around;
     padding: 20px 0px;
@@ -70,8 +71,117 @@ nav .navbar {
     border-radius: 20px;
     text-transform: uppercase;
     font-weight: bold;
+} */
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #5d4954;
 }
 
+
+.logo{
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.navbar .nav-button .nav-btn {
+    border-radius: 15px;
+    border: none;
+}
+/* sub menu */
+/* burger button design */
+.burger { 
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width:1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px) {
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        top: 8vh;
+        height: 92vh;
+        background-color: #5d4954;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+
+
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+    
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+}
 /* hero section style */
 .hero {
     margin-top: 100px;
@@ -187,7 +297,7 @@ nav .navbar {
 }
 
 .services-item {
-    width: 350px;
+    width: 315px;
     padding: 40px;
     background-color: black;
 }
@@ -205,7 +315,6 @@ nav .navbar {
     font-size: 16px;
 }
 .services-item:hover {
-    width: 350px;
     padding: 40px;
     background-color: gray;
     cursor: pointer;
@@ -232,7 +341,7 @@ nav .navbar {
     justify-content: space-around;
 }
 .work-item img {
-    width: 350px;
+    width: 315px;
     height: 300px;
     cursor: pointer;
 }
@@ -295,6 +404,186 @@ nav .navbar {
 .job h6{
     margin-bottom: 30px;
 }
+
+
+/* testimonials syle css */
+
+.testimonials-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+
+}
+.testimonils-item {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
+}
+.testimonils-item .rating {
+    text-align: right;
+}
+.testimonils-item .rating i{
+    font-size: 10px;
+    color: orange;
+}
+
+.testimonials-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.testimonials-top .fa-message {
+    font-size: 40px;
+    color: red;
+}
+.testimonils-item p{
+    text-align: justify;
+}
+
+.testimonials-user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+.testimonials-user img {
+    width: 20%;
+    margin-right: 15px;
+}
+
+.testimonials-user p {
+    font-size: 12px;
+}
+
+/* clients css  */
+.client-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.client-content div{
+   width: 200px;
+}
+.client-content img{
+    width: 100px;
+}
+#clients {
+    margin-top: 50px;
+}
+
+/* contact css */
+#contact {
+    margin-top: 50px;
+}
+
+.contact-content {
+    height: 600px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(4, 120px);
+    grid-gap: 20px;
+    grid-template-areas: 
+        "a m"
+        "p m"
+        "e m"
+        "f m"
+}
+
+.address {
+    grid-area: a;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
+}
+
+.mobile {
+    grid-area: p;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
+}
+
+.email {
+    grid-area: e;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
+}
+.available {
+    grid-area: f;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
+}
+.message {
+    grid-area: m;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
+}
+
+
+.contact-content i {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: red;
+}
+.contact-content p {
+    color: white;
+}
+
+/* contact form */
+.message  {
+    padding: 40px;
+    text-align: left;
+}
+.message input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: black;
+    border: none;
+    
+}
+.message textarea {
+    background-color: black;
+    border: none;
+    width: 100%;
+    height: 150px;
+}
+.mess-btn{
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 20px 30px;
+}
+
+/* footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-link i {
+    font-size: 35px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+.footer-link i:hover {
+    color: tomato;
+    transform: translateY(-5px);
+}
+.footer-text {
+    padding: 20px;
+}
+footer h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
 @media (max-width: 850px) {
     .navbar .nav-button{
         display: none;
@@ -315,4 +604,25 @@ nav .navbar {
         gap: 60px;
         flex-direction: column;
     }
+    .testimonials-content {
+        flex-direction: column;
+    }
+    .contact-content {
+        height: 600px;
+        display: grid;
+        text-align: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 120px);
+        grid-gap: 20px;
+        grid-template-areas: 
+            "a"
+            "p"
+            "e"
+            "f"
+            "m"
+    }
+    #contact .section-break{
+        margin-top: 400px;
+    }
+    
 }
